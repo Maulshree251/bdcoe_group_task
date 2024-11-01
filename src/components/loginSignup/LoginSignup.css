@@ -19,6 +19,12 @@
     font-weight: 500;
 }
 
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 img {
     height: 20px;
 }
@@ -30,7 +36,7 @@ img {
 }
 
 .underline {
-    width: 500px;
+    width: 400px;
     height: 3px;
     border-radius: 9px;
     background-color: black;

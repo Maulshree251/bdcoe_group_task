@@ -1,32 +1,34 @@
-import React, { useContext, useDeferredValue, useEffect, useState } from 'react'
-import SearchIcon from './Assets/search-icon-white.svg'
-import SearchIconLight from './Assets/search-icon.svg'
-import LightMode from './Assets/sun-purple.svg'
-import LogoPurple from './Assets/tv-fill.svg'
-import { Link } from 'react-router-dom'
-import axios from '../utils/axios'  
-import { MoviesContext } from '../utils/Context'
+import React, {
+  useContext,
+  useDeferredValue,
+  useEffect,
+  useState,
+} from "react";
+import SearchIcon from "./Assets/search-icon-white.svg";
+import SearchIconLight from "./Assets/search-icon.svg";
+import LightMode from "./Assets/sun-purple.svg";
+import LogoPurple from "./Assets/tv-fill.svg";
+import { Link } from "react-router-dom";
+import axios from "./axios";
+import { MoviesContext } from "./Context";
 
-
-function Navbar({isLighttheme, setIsLighttheme}) {
-
+function Navbar({ isLighttheme, setIsLighttheme }) {
   const [movies, setMovies] = useContext(MoviesContext);
-  const[text, setText] = useState("Search Movies");
-  
-  const changeText = (event) => {
+  const [text, setText] = useState("Search Movies");
 
+  const changeText = (event) => {
     setText(event.target.value);
-  }
+  };
   const searchMovies = (e) => {
-      e.preventDefault();
-      axios
-        .get(`http://www.omdbapi.com/?s=${text}&apikey=71c9538f`)
-        .then((response) => {
-          console.log(response);
-          setMovies(response.data.Search);
-        });
-  }
-  
+    e.preventDefault();
+    axios
+      .get(`http://www.omdbapi.com/?s=${text}&apikey=71c9538f`)
+      .then((response) => {
+        console.log(response);
+        setMovies(response.data.Search);
+      });
+  };
+
   const toggleTheme = () => {
     setIsLighttheme(!isLighttheme);
   };
@@ -122,5 +124,4 @@ function Navbar({isLighttheme, setIsLighttheme}) {
   );
 }
 
-
-export default Navbar
+export default Navbar;

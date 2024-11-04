@@ -42,7 +42,7 @@ function Navbar({isLighttheme, setIsLighttheme}) {
         <li>
           <Link
             to="/"
-            className={`hover:bg-purple-700 duration-300 cursor-pointer ${
+            className={`hover:bg-[#bb30b9] duration-300 cursor-pointer ${
               isLighttheme ? "text-gray-900" : "text-zinc-400"
             } p-3 rounded-md duration-300`}
           >
@@ -52,7 +52,7 @@ function Navbar({isLighttheme, setIsLighttheme}) {
         <li>
           <Link
             to="/bookmarkpage"
-            className={`hover:bg-purple-700 duration-300 cursor-pointer ${
+            className={`hover:bg-[#bb30b9] duration-300 cursor-pointer ${
               isLighttheme ? "text-gray-900" : "text-zinc-400"
             } p-3 rounded-md duration-300`}
           >
@@ -62,7 +62,7 @@ function Navbar({isLighttheme, setIsLighttheme}) {
         <li>
           <Link
             to="/About"
-            className={`hover:bg-purple-700 cursor-pointer duration-300 ${
+            className={`hover:bg-[#bb30b9] cursor-pointer duration-300 ${
               isLighttheme ? "text-gray-900" : "text-zinc-400"
             } p-3 rounded-md duration-300`}
           >
@@ -73,7 +73,11 @@ function Navbar({isLighttheme, setIsLighttheme}) {
 
       <div className="flex justify-evenly items-center gap-3 p-2  rounded-full ">
         <Link className="hover:scale-150 h-fit w-fit">
-          <img src={isLighttheme? SearchIconLight : SearchIcon} alt="" onClick={searchMovies} />
+          <img
+            src={isLighttheme ? SearchIconLight : SearchIcon}
+            alt=""
+            onClick={searchMovies}
+          />
         </Link>
 
         <input
@@ -99,7 +103,7 @@ function Navbar({isLighttheme, setIsLighttheme}) {
       <div className="flex gap-3">
         <Link
           to="/MakeProfile"
-          className={`hover:bg-purple-700 cursor-pointer ${
+          className={`hover:bg-[#bb30b9] cursor-pointer ${
             isLighttheme ? "text-gray-900" : "text-zinc-400"
           } p-3 rounded-md duration-300`}
         >
@@ -107,7 +111,7 @@ function Navbar({isLighttheme, setIsLighttheme}) {
         </Link>
         <Link
           to="/LoginSignup"
-          className={`hover:bg-purple-700 cursor-pointer ${
+          className={`hover:bg-[#bb30b9] cursor-pointer ${
             isLighttheme ? "text-gray-900" : "text-zinc-400"
           } p-3 rounded-md duration-300`}
         >

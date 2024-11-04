@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function LoginSignup() {
+function LoginSignup({isLighttheme}) {
   const [action, setAction] = useState("Login");
   const [fullname, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -59,7 +59,7 @@ function LoginSignup() {
   }
 
   return (
-    <div className="container">
+    <div className={isLighttheme? "container white" : "container"}>
       <div className="header">
         <div className="text">{action}</div>
         <div className="underline"></div>

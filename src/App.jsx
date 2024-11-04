@@ -54,7 +54,7 @@ function App() {
             <Home bookmarks={bookmarks} toggleBookmarks={toggleBookmarks} />
           }
         />
-        <Route path="/LoginSignup" element={<LoginSignup />} />
+        <Route path="/LoginSignup" element={<LoginSignup isLighttheme={isLighttheme}/>} />
         <Route path="/MakeProfile" element={<MakeProfile />} />
         <Route
           path="/bookmarkpage"
@@ -66,7 +66,7 @@ function App() {
           }
         />
         <Route path='/Trailer' element={<Trailer /> }/>
-        <Route path='/About' element={<About /> }/>
+        <Route path='/About' element={<About isLighttheme={isLighttheme}/> }/>
       </Routes>
       </div>
       </>

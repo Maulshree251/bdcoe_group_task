@@ -22,11 +22,11 @@ const Home = ({bookmarks, toggleBookmarks}) => {
               alt=""
             />
           </div>
-          <div className=" w-full flex-col gap-3">
-            <h1 className="font-semibold">{m.Title}</h1>
+          <div className=" w-full flex-col gap-3 h-11">
+            <h3 className="pt-1 font-semibold leading-none">{m.Title}</h3>
             <p className=" text-xs">Year:{m.Year}</p>
           </div>
-          <div className="flex justify-between gap-2 w-full p-1">
+          <div className="flex justify-between gap-2 w-full px-1">
             <button className="hover:bg-green-600 duration-300 w-[45%] rounded-md p-2 text-xs bg-transparent border-[0.1em] border-zinc-400" >
               <i className="ri-play-fill"></i>
               Play Trailor

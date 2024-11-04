@@ -38,14 +38,7 @@ function MakeProfile() {
           placeholder="Username"
           onChange={(event)=>setVal({...val, username: event.target.value})}
         />
-        <textarea
-          className="px-3 py-2 rounded-md border-none outline-none text-xs font-semibold"
-          type="text"
-          name=""
-          id=""
-          placeholder="Bio"
-          onChange={(event)=>setVal({...val, bio: event.target.value })}         
-        />
+        
         <input
           className="px-3 py-2 rounded-md border-none outline-none text-xs font-semibold"
           type="text"
@@ -54,10 +47,11 @@ function MakeProfile() {
           placeholder="Image URL"
           onChange={(event)=>setVal({...val, image: event.target.value })} 
         />
+        
         <input
           type="submit"
-          value="submit"
-          className="px-3 py-1 bg-blue-600 text-white font-semibold rounded-md"
+          value="Submit"
+          className="px-3  bg-blue-600 text-white font-semibold rounded-md"
         />
       </form>
     </div>

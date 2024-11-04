@@ -15,7 +15,7 @@ function MovieCard({bookmarkedMovie, toggleBookmark}) {
           alt=""
         />
       </div>
-      <div className=" w-full flex-col gap-3">
+      <div className=" w-full flex-col gap-3 h-12">
         <h className="font-semibold">{bookmarkedMovie.Title}</h>
         <p className=" text-xs">
           Year:{bookmarkedMovie.Year} 

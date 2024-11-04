@@ -10,16 +10,16 @@ const Context = (props) => {
     const getMovies =  () => {
 
      axios
-       .get("/?s=main&apikey=3ddb3253")
+       .get("/?s=kabhi&apikey=71c9538f")
        .then((data) => {
-        console.log(data);
-        setMovies(data.data.Search);
-        
+         console.log(data);
+         setMovies(data.data.Search);
        })
-        .catch ((err) =>
-        console.log(err));
+       .catch((err) => console.log(err));
     };
+    
     console.log(movies);
+
     useEffect(()=> {
         getMovies();
     }, [])

@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useDeferredValue, useEffect, useState } from 'react'
 import SearchIcon from './Assets/search-icon-white.svg'
 import LightMode from './Assets/sun-purple.svg'
 import LogoPurple from './Assets/tv-fill.svg'
 import { Link } from 'react-router-dom'
-import MakeProfile from './makeProfile'
 import axios from '../utils/axios'  
 import { MoviesContext } from '../utils/Context'
 
@@ -19,14 +18,14 @@ function Navbar() {
   const searchMovies = (e) => {
       e.preventDefault();
       axios
-        .get(`http://www.omdbapi.com/?s=${text}&apikey=3ddb3253`)
+        .get(`http://www.omdbapi.com/?s=${text}&apikey=71c9538f`)
         .then((response) => {
           console.log(response);
-          setMovies(response.data.Search)
-          
+          setMovies(response.data.Search);
         });
   }
 
+  
   return (
     <div className="w-[100%] h-[10%] flex items-center justify-around p-2  fixed text-white border-b-[0.1rem] border-zinc-400  bg-[#1F1E24]">
       <img src={LogoPurple} alt="" className="w-9 h-9 " />
@@ -41,7 +40,7 @@ function Navbar() {
         </li>
         <li>
           <Link
-            to="/bookmarks"
+            to="/bookmarkpage"
             className=" hover:bg-purple-700 cursor-pointer text-zinc-400 p-3 rounded-md duration-300"
           >
             <i className="ri-book-marked-fill"></i>Bookmarks
@@ -49,7 +48,7 @@ function Navbar() {
         </li>
         <li>
           <Link
-            to="/about"
+            to="/About"
             className="hover:bg-purple-700 cursor-pointer text-zinc-400 p-3 rounded-md duration-300"
           >
             <i className="ri-book-open-fill"></i>About
@@ -58,8 +57,8 @@ function Navbar() {
       </ul>
 
       <div className="flex justify-evenly gap-3 p-2  rounded-full ">
-        <Link onClick={searchMovies}>
-          <img src={SearchIcon} alt="" className="" />
+        <Link  className='hover:scale-150'>
+          <img src={SearchIcon} alt="" onClick={searchMovies} />
         </Link>
 
         <input
@@ -72,7 +71,7 @@ function Navbar() {
         />
       </div>
 
-      <img src={LightMode} alt="" className="h-6 cursor-pointer" />
+      <img src={LightMode} alt="" className="h-6 cursor-pointer hover:scale-125" />
 
       <div className="flex gap-3">
         <Link

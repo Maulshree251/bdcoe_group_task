@@ -11,6 +11,14 @@ import About from './components/About'
 
 
 function App() {
+
+  const [isLighttheme, setIsLighttheme] = useState(false);
+
+  useEffect(() => {
+    document.body.className = isLighttheme ? "light-bg" : "dark-bg";
+  }, [isLighttheme]);
+
+
   const[bookmarks, setBookmarks] = useState(()=>{
 
     const savedBookmarks = localStorage.getItem('bookmark');
@@ -37,7 +45,7 @@ function App() {
 
   return (
     <><div className=" bg-#1F1E24 w-screen h-screen flex-col overflow-x-hidden">
-      <Navbar />
+      <Navbar isLighttheme={isLighttheme} setIsLighttheme={setIsLighttheme} />
    
       <Routes>
         <Route

@@ -10,7 +10,7 @@ const Context = (props) => {
     const getMovies =  () => {
 
      axios
-       .get("/?s=kabhi&apikey=71c9538f")
+       .get("/?s=main&apikey=71c9538f")
        .then((data) => {
          console.log(data);
          setMovies(data.data.Search);

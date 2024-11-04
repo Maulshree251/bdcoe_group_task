@@ -1,5 +1,6 @@
 import React, { useContext, useDeferredValue, useEffect, useState } from 'react'
 import SearchIcon from './Assets/search-icon-white.svg'
+import SearchIconLight from './Assets/search-icon.svg'
 import LightMode from './Assets/sun-purple.svg'
 import LogoPurple from './Assets/tv-fill.svg'
 import { Link } from 'react-router-dom'
@@ -7,10 +8,11 @@ import axios from '../utils/axios'
 import { MoviesContext } from '../utils/Context'
 
 
-function Navbar() {
-  const [movies, setMovies] = useContext(MoviesContext);
-  const[text, setText] = useState("Search Movies")
+function Navbar({isLighttheme, setIsLighttheme}) {
 
+  const [movies, setMovies] = useContext(MoviesContext);
+  const[text, setText] = useState("Search Movies");
+  
   const changeText = (event) => {
 
     setText(event.target.value);
@@ -24,16 +26,25 @@ function Navbar() {
           setMovies(response.data.Search);
         });
   }
-
   
+  const toggleTheme = () => {
+    setIsLighttheme(!isLighttheme);
+  };
+
   return (
-    <div className="w-[100%] h-[10%] flex items-center justify-around p-2  fixed text-white border-b-[0.1rem] border-zinc-400  bg-[#1F1E24]">
+    <div
+      className={`w-[100%] h-[10%] flex items-center justify-around p-2 fixed text-white border-b-[0.1rem] border-zinc-400 ${
+        isLighttheme ? "bg-slate-200" : "bg-[#1F1E24]"
+      }`}
+    >
       <img src={LogoPurple} alt="" className="w-9 h-9 " />
       <ul className="flex gap-9  ">
         <li>
           <Link
             to="/"
-            className="hover:bg-purple-700 cursor-pointer text-zinc-400 p-3 rounded-md duration-300 "
+            className={`hover:bg-purple-700 duration-300 cursor-pointer ${
+              isLighttheme ? "text-gray-900" : "text-zinc-400"
+            } p-3 rounded-md duration-300`}
           >
             <i className="ri-home-9-fill"></i>Home
           </Link>
@@ -41,7 +52,9 @@ function Navbar() {
         <li>
           <Link
             to="/bookmarkpage"
-            className=" hover:bg-purple-700 cursor-pointer text-zinc-400 p-3 rounded-md duration-300"
+            className={`hover:bg-purple-700 duration-300 cursor-pointer ${
+              isLighttheme ? "text-gray-900" : "text-zinc-400"
+            } p-3 rounded-md duration-300`}
           >
             <i className="ri-book-marked-fill"></i>Bookmarks
           </Link>
@@ -49,16 +62,18 @@ function Navbar() {
         <li>
           <Link
             to="/About"
-            className="hover:bg-purple-700 cursor-pointer text-zinc-400 p-3 rounded-md duration-300"
+            className={`hover:bg-purple-700 cursor-pointer duration-300 ${
+              isLighttheme ? "text-gray-900" : "text-zinc-400"
+            } p-3 rounded-md duration-300`}
           >
             <i className="ri-book-open-fill"></i>About
           </Link>
         </li>
       </ul>
 
-      <div className="flex justify-evenly gap-3 p-2  rounded-full ">
-        <Link  className='hover:scale-150'>
-          <img src={SearchIcon} alt="" onClick={searchMovies} />
+      <div className="flex justify-evenly items-center gap-3 p-2  rounded-full ">
+        <Link className="hover:scale-150 h-fit w-fit">
+          <img src={isLighttheme? SearchIconLight : SearchIcon} alt="" onClick={searchMovies} />
         </Link>
 
         <input
@@ -66,23 +81,35 @@ function Navbar() {
           placeholder="Search Movies"
           name=""
           id=""
-          className="bg-transparent border-none rounded-full placeholder: text-zinc-400 px-2  outline-none"
+          className={`${
+            isLighttheme ? "bg-[#1F1E24]" : "bg-transparent"
+          } border-none rounded-full placeholder: text-zinc-400 px-4 py-1  outline-none`}
           onChange={changeText}
         />
       </div>
 
-      <img src={LightMode} alt="" className="h-6 cursor-pointer hover:scale-125" />
+      <div onClick={() => toggleTheme()}>
+        <img
+          src={LightMode}
+          alt=""
+          className="h-6 cursor-pointer hover:scale-125"
+        />
+      </div>
 
       <div className="flex gap-3">
         <Link
           to="/MakeProfile"
-          className="hover:bg-purple-700 cursor-pointer text-zinc-400 p-3 rounded-md duration-300"
+          className={`hover:bg-purple-700 cursor-pointer ${
+            isLighttheme ? "text-gray-900" : "text-zinc-400"
+          } p-3 rounded-md duration-300`}
         >
           Profile
         </Link>
         <Link
           to="/LoginSignup"
-          className="hover:bg-purple-700 cursor-pointer text-zinc-400 p-3 rounded-md duration-300"
+          className={`hover:bg-purple-700 cursor-pointer ${
+            isLighttheme ? "text-gray-900" : "text-zinc-400"
+          } p-3 rounded-md duration-300`}
         >
           Login/Register
         </Link>

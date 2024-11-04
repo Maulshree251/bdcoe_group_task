@@ -8,7 +8,7 @@ const About = () => {
           About Us
         </h1>
         <p className="text-lg text-zinc-300  mb-6 text-center">
-          Welcome to <span className="font-semibold">[Your Website Name]</span>!
+          Welcome to <span className="font-semibold">BDCOE || Movie App</span>!
           We’re passionate about connecting you with movies you'll love. Whether
           you're in the mood for a blockbuster or an indie film, we’ve got you
           covered.
@@ -28,44 +28,20 @@ const About = () => {
         </h2>
 
         <div className="mb-4">
-          <h3 className="text-xl font-semibold text-zinc-300 ">
-            Personalized Recommendations
-          </h3>
+         
           <p className="text-zinc-300 ">
-            Our recommendation engine combines data-driven algorithms with user
-            feedback to suggest movies tailored to your tastes. The more you
-            interact, the more our system understands your preferences.
-          </p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold text-zinc-300 ">
-            Curated Lists & Trending Picks
-          </h3>
-          <p className="text-zinc-300 ">
-            Discover handpicked movie lists that match different genres, moods,
-            and themes. Stay updated with the latest trends and popular releases
-            in the movie world.
-          </p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold text-zinc-300 ">
-            User Ratings and Reviews
-          </h3>
-          <p className="text-zinc-300 ">
-            Read honest reviews and ratings from other users, or share your
-            thoughts to help others find their next great watch.
-          </p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold text-zinc-300 ">
-            Advanced Search Filters
-          </h3>
-          <p className="text-zinc-300 ">
-            Filter by genre, director, year, or theme to find the exact type of
-            movie you’re in the mood for.
+            The Movie Recommendations Website is a user-friendly platform that
+            allows individuals to sign in or sign up using their email/password
+            or Google accounts. Users can create personalized profiles, watch
+            trailers for selected movies, and bookmark their favorites for easy
+            access. Website has a very interactive interface allowing users to
+            also watch movies according to various categories, genres, cast,
+            etc. The site feature search function to help users find movies by
+            using machine learning algorithms to analyze user preferences and
+            suggest tailored movie recommendations, enhancing the overall
+            viewing experience. This project aims to combine accessibility,
+            personalization, and entertainment in a seamless digital
+            environment.
           </p>
         </div>
 
@@ -73,7 +49,7 @@ const About = () => {
           Join Our Community
         </h2>
         <p className="text-zinc-300 ">
-          Join <span className="font-semibold">[Your Website Name]</span> and
+          Join <span className="font-semibold">BDCOE || Movie App</span> and
           connect with fellow movie lovers. Share your recommendations, explore
           new genres, and become part of a community passionate about cinema.
         </p>
@@ -81,7 +57,7 @@ const About = () => {
         <div className="text-center mt-8">
           <p className="text-zinc-300  italic">
             Thank you for choosing{" "}
-            <span className="font-semibold">[Your Website Name]</span> as your
+            <span className="font-semibold">BDCOE || Movie App</span> as your
             movie guide. Let’s make your cinematic journey unforgettable!
           </p>
         </div>

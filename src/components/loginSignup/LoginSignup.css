@@ -85,7 +85,7 @@ img {
     background-color: rgb(62, 62, 243);
     font-weight: 700;
     padding: 5px;
-    width: 90px;
+    /* width: 90px; */
     object-position: center;
     border-radius: 5px;
     cursor: pointer;

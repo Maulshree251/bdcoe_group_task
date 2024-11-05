@@ -65,7 +65,7 @@ function App() {
             />
           }
         />
-        <Route path='/Trailer' element={<Trailer /> }/>
+        <Route path='/Trailer/:_id' element={<Trailer  /> }/>
         <Route path='/About' element={<About isLighttheme={isLighttheme}/> }/>
       </Routes>
       </div>

@@ -8,11 +8,13 @@ const Home = ({ bookmarks, toggleBookmarks }) => {
 const [movies] = useContext(MoviesContext);
   console.log(movies);
 
+
+
   return movies ? (
     <div className="w-full mt-[5%] flex flex-wrap gap-5 ml-10 p-5 overflow-x-hidden overflow-y-auto  ">
       {movies.map((m) => (
         <div
-          key={m.id}
+          key={m._id}
           className="w-[290px]  rounded-md bg-zinc-400 overflow-hidden hover:scale-110 duration-300"
         >
           <div className="w-full h-[170px] overflow-hidden bg-top-left">
@@ -31,14 +33,14 @@ const [movies] = useContext(MoviesContext);
             <p className=" text-xs">Year:{m.year}</p>
           </div>
           <div className="flex justify-between gap-2 w-full px-1">
-            <button className="hover:bg-green-600 duration-300 w-[45%] rounded-md p-2 text-xs bg-transparent border-[0.1em] border-zinc-400">
+            <button className="hover:bg-green-600 duration-300 w-[45%] rounded-md p-2 text-xs bg-transparent border-[0.1em] border-zinc-400" onClick={()=> window.location.href = `/trailer/${m._id}`}>
               <i className="ri-play-fill"></i>
               Play Trailor
             </button>
             <div className="w-[45%] items-center hover:bg-teal-600 rounded-md duration-300 text-xs p-2 bg-transparent border-[0.1em] border-zinc-400">
               <i className="ri-bookmark-fill"></i>
               <button className="" onClick={() => toggleBookmarks(m)}>
-                {bookmarks.some((b) => b.id === m.id)
+                {bookmarks.some((b) => b._id === m._id)
                   ? "Bookmarked"
                   : "Bookmark"}
               </button>

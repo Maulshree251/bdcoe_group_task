@@ -34,7 +34,7 @@ const BookmarkPage = ({bookmarks, toggleBookmarks}) => {
                 <div className="w-[45%] items-center hover:bg-teal-600 rounded-md duration-300 text-xs p-2 bg-transparent border-[0.1em] border-zinc-400">
                   <i class="ri-bookmark-fill"></i>
                   <button
-                    className={``}
+                    className=""
                     onClick={() => toggleBookmarks(bookmarkedMovie)}
                   >
                     Remove

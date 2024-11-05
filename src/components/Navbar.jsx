@@ -22,10 +22,10 @@ function Navbar({ isLighttheme, setIsLighttheme }) {
   const searchMovies = (e) => {
     e.preventDefault();
     axios
-      .get(`http://www.omdbapi.com/?s=${text}&apikey=71c9538f`)
+      .get(`https://bdcoetask2.vercel.app/api/v1/users/search/movies?title=${text}`)
       .then((response) => {
         console.log(response);
-        setMovies(response.data.Search);
+        setMovies(response.data.data);
       });
   };
 

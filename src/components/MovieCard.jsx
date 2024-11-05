@@ -8,13 +8,13 @@ function MovieCard({ bookmarkedMovie, toggleBookmark }) {
       <div className="w-full h-[65%] overflow-hidden bg-top-left">
         <img
           className="h-full w-full object-cover object-top"
-          src={bookmarkedMovie.Poster}
+          src={bookmarkedMovie.poster}
           alt=""
         />
       </div>
       <div className=" w-full flex-col gap-3 h-12">
-        <h className="font-semibold">{bookmarkedMovie.Title}</h>
-        <p className=" text-xs">Year:{bookmarkedMovie.Year}</p>
+        <h className="font-semibold">{bookmarkedMovie.title}</h>
+        <p className=" text-xs">Year:{bookmarkedMovie.year}</p>
       </div>
       <div className="flex justify-between gap-2 w-full p-1">
         <button className="hover:bg-green-600 duration-300 w-[45%] rounded-md p-2 text-xs bg-transparent border-[0.1em] border-zinc-400">

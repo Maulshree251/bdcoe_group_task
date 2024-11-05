@@ -7,10 +7,11 @@ const Context = (props) => {
 
   const getMovies = () => {
     axios
-      .get("/?s=main&apikey=71c9538f")
+      .get("/movies?type=movie"
+      )
       .then((data) => {
         console.log(data);
-        setMovies(data.data.Search);
+        setMovies(data.data.data);
       })
       .catch((err) => console.log(err));
   };

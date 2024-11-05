@@ -31,8 +31,8 @@ function App() {
 
   function toggleBookmarks(clickedMovies) {
       setBookmarks((prevBookmarks)=>{
-         if(prevBookmarks.some((b)=> b.imdbID === clickedMovies.imdbID)){
-          return prevBookmarks.filter((b)=> b.imdbID !== clickedMovies.imdbID)
+         if(prevBookmarks.some((b)=> b.id === clickedMovies.id)){
+          return prevBookmarks.filter((b)=> b.id !== clickedMovies.id)
          }
          else{
           return [...prevBookmarks, clickedMovies]

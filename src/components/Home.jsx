@@ -28,7 +28,7 @@ const [movies] = useContext(MoviesContext);
               alt=""
             />
           </div>
-          <div className=" w-full flex-col gap-3 h-11">
+          <div className=" w-full flex-col gap-3 h-11 overflow-hidden">
             <h3 className="pt-1 font-semibold leading-none">{m.title}</h3>
             <p className=" text-xs">Year:{m.year}</p>
           </div>
